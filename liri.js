@@ -6,7 +6,18 @@ var request = require("request");
 //Global Vars
 var operator = process.argv[2];
 var argument = process.argv[3];
-console.log(operator);
+var conKey = keys.twitterKeys.consumer_key;
+var conSec = keys.twitterKeys.consumer_secret;
+var accKey = keys.twitterKeys.access_token_key;
+var accSec = keys.twitterKeys.access_token_secret;
+var client = new twitter({
+	consumer_key: conKey,
+	consumer_secret: conSec,
+	access_token_key: accKey,
+	access_token_secret: accSec
+});
+console.log(client);
+var params ={screen_name: "cuddlykatdfgftw"};
 // Spotify function for liri
 if (operator== "spotify-this-song"){
 	if (argument == true ){
@@ -96,4 +107,14 @@ if (operator== "spotify-this-song"){
  			console.log("It is on Netflix! You should go check it out.");
 	});
 }
+//Twitter
+}else if (operator == "twitter"){
+	client.get("statuses", function(error, tweets, responses){
+		if (error){
+			console.log("Opps something went wrong here!");
+		}else{
+			console.log(responses);
+			console.log(tweets);
+		}
+	});
 }
