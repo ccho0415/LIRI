@@ -16,7 +16,6 @@ var client = new twitter({
 	access_token_key: accKey,
 	access_token_secret: accSec
 });
-console.log(client);
 var params ={screen_name: "cuddlykatdfgftw"};
 // Spotify function for liri
 if (operator== "spotify-this-song"){
@@ -114,8 +113,10 @@ if (operator== "spotify-this-song"){
 			console.log("Opps something went wrong here!");
 			console.log(error);
 		}else{
-			console.log(responses);
-			console.log(tweets);
+			tweets.forEach(function(val){
+				console.log(val.text);
+				console.log(val.created_at);
+			})
 		}
 	});
 }
