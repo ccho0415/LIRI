@@ -109,9 +109,10 @@ if (operator== "spotify-this-song"){
 }
 //Twitter
 }else if (operator == "twitter"){
-	client.get("statuses", function(error, tweets, responses){
+	client.get("statuses/user_timeline", function(error, tweets, responses){
 		if (error){
 			console.log("Opps something went wrong here!");
+			console.log(error);
 		}else{
 			console.log(responses);
 			console.log(tweets);
