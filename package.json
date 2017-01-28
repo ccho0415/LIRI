@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ccho0415/LIRI/issues"
   },
-  "homepage": "https://github.com/ccho0415/LIRI#readme"
+  "homepage": "https://github.com/ccho0415/LIRI#readme",
+  "dependencies": {
+    "request": "^2.79.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.7.0"
+  }
 }
