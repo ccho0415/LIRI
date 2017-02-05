@@ -19,7 +19,7 @@ var client = new twitter({
 var params ={screen_name: "cuddlykatdfgftw"};
 // Spotify function for liri
 if (operator== "spotify-this-song"){
-	if (argument == true ){
+	if (argument){
 	spotify.search({type: "track", query: argument}, function(err,data){
 		if(err){
 			console.log("Error has occured!");
