@@ -62,7 +62,7 @@ if (operator== "spotify-this-song"){
 	}
 // Movie Function for LIRI
 }else if (operator == "movie-this"){
-	if (argument == true){
+	if (argument){
 
 	let queryUrl = "http://www.omdbapi.com/?t=" + argument + "&y=&plot=short&r=json&tomatoes=true";
 		request(queryUrl, function (er, res, data) {
